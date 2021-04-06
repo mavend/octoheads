@@ -5,16 +5,16 @@ export const colors = {
       shadow: '#f3ab98',
     },
     yellow: {
-      base: '#FBE8B3',
-      shadow: '#EDD494',
+      base: '#FBEB7D',
+      shadow: '#F5D532',
     },
-    brown: {
-      base: '#D8985D',
-      shadow: '#C6854E',
+    pink: {
+      base: '#E66F8D',
+      shadow: '#E25C7B',
     },
-    dark: {
-      base: '#A56941',
-      shadow: '#8D5638',
+    purple: {
+      base: '#9E55A1',
+      shadow: '#893E97',
     },
     red: {
       base: '#CC734C',

@@ -15,7 +15,9 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "prepare": "tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -29,13 +31,21 @@
   "author": "Robert Broersma",
   "module": "dist/core.esm.js",
   "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@storybook/addon-actions": "^6.2.3",
+    "@storybook/addon-essentials": "^6.2.3",
+    "@storybook/addon-links": "^6.2.3",
+    "@storybook/react": "^6.2.3",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.2.2",
     "husky": "^4.2.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "storybook": "^6.2.3",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.6"
-  }
+  },
+  "dependencies": {}
 }
