@@ -1,12 +1,12 @@
 export const colors = {
   skin: {
-    light: {
-      base: '#fdd2b2',
-      shadow: '#f3ab98',
+    blue: {
+      base: '#5AC5D8',
+      shadow: '#53B8C9',
     },
     yellow: {
-      base: '#FBEB7D',
-      shadow: '#F5D532',
+      base: '#F6C64A',
+      shadow: '#E5B845',
     },
     pink: {
       base: '#E66F8D',
@@ -17,12 +17,12 @@ export const colors = {
       shadow: '#893E97',
     },
     red: {
-      base: '#CC734C',
-      shadow: '#B56241',
+      base: '#CC4B45',
+      shadow: '#B54641',
     },
-    black: {
-      base: '#754437',
-      shadow: '#6B3D34',
+    green: {
+      base: '#1DA26D',
+      shadow: '#479569',
     },
   },
   hair: {
