@@ -22,7 +22,7 @@ export const colors = {
     },
     green: {
       base: '#1DA26D',
-      shadow: '#479569',
+      shadow: '#378559',
     },
   },
   hair: {

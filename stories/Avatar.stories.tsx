@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Avatar, AvatarProps } from '../src'
+import { Avatar, AvatarProps, Empty } from '../src'
 
 const meta: Meta = {
   title: 'Avatar',
@@ -19,19 +19,6 @@ export const Default: Story<AvatarProps> = args => (
 )
 
 Default.args = {
-  // skinTone: 'light',
-  // eyes: 'normal',
-  // eyebrows: 'raised',
-  // mouth: 'lips',
-  // hair: 'short',
-  // facialHair: 'none',
-  // accessory: 'none',
-  // hat: 'none',
-  // hairColor: 'black',
-  // lipColor: 'red',
-  // hatColor: 'green',
-  // lashes: false,
-
   body: 'chest',
   clothing: 'naked',
   clothingColor: 'red',
@@ -41,3 +28,9 @@ Default.args = {
   mask: false,
   circleColor: 'blue',
 }
+
+export const EmptyHead = () => (
+  <div style={{ width: 400 }}>
+    <Empty />
+  </div>
+)

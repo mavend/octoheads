@@ -3,6 +3,7 @@ import React from 'react'
 import { colors } from '../theme'
 import { ThemeContext } from '../themeContext'
 import { Noop } from '../utils/Noop'
+import { randomGenerator } from '../utils/rand'
 
 import { Base } from '../components/Base'
 
@@ -153,12 +154,11 @@ export const bodyMap = {
   breasts: Breasts,
 }
 
-function selectRandomKey<T extends {}>(object: T) {
+function selectRandomKey<T extends {}>(object: T, rand = Math.random) {
   return (Object.keys(object) as Array<keyof typeof object>)[
-    Math.floor(Math.random() * Object.keys(object).length)
+    Math.floor(rand() * Object.keys(object).length)
   ]
 }
-
 export interface AvatarProps {
   skinTone?: keyof typeof colors.skin
   eyes?: keyof typeof eyesMap
@@ -182,34 +182,41 @@ export interface AvatarProps {
   mask?: boolean
   faceMask?: boolean
   lashes?: boolean
+
+  seed?: string
 }
 
-export const Avatar = ({
-  skinTone = selectRandomKey(colors.skin),
-  eyes = selectRandomKey(eyesMap),
-  eyebrows = selectRandomKey(eyebrowsMap),
-  mouth = selectRandomKey(mouthsMap),
-  hair = selectRandomKey(hairMap),
-  facialHair = selectRandomKey(facialHairMap),
-  clothing = selectRandomKey(clothingMap),
-  accessory = selectRandomKey(accessoryMap),
-  graphic = selectRandomKey(graphicsMap),
-  hat = selectRandomKey(hatMap),
-  body = selectRandomKey(bodyMap),
+export const Avatar = (props: AvatarProps) => {
+  const rand = randomGenerator(props.seed)
+  const selectRandom = (obj: object) => selectRandomKey(obj, rand)
 
-  hairColor = selectRandomKey(colors.hair),
-  clothingColor = selectRandomKey(colors.clothing),
-  circleColor = selectRandomKey(colors.bgColors),
-  lipColor = selectRandomKey(colors.lipColors),
-  hatColor = selectRandomKey(colors.clothing),
-  faceMaskColor = selectRandomKey(colors.clothing),
+  const {
+    skinTone = selectRandom(colors.skin),
+    eyes = selectRandom(eyesMap),
+    eyebrows = selectRandom(eyebrowsMap),
+    mouth = selectRandom(mouthsMap),
+    hair = selectRandom(hairMap),
+    facialHair = selectRandom(facialHairMap),
+    accessory = selectRandom(accessoryMap),
+    graphic = selectRandom(graphicsMap),
+    hat = selectRandom(hatMap),
+    body = selectRandom(bodyMap),
 
-  mask = true,
-  faceMask = true,
-  lashes = Math.random() > 0.5,
+    hairColor = selectRandom(colors.hair),
+    clothingColor = selectRandom(colors.clothing),
+    circleColor = selectRandom(colors.bgColors),
+    lipColor = selectRandom(colors.lipColors),
+    hatColor = selectRandom(colors.clothing),
+    faceMaskColor = selectRandom(colors.clothing),
 
-  ...rest
-}: AvatarProps) => {
+    clothing = 'naked',
+    mask = false,
+    faceMask = false,
+    lashes = Math.random() > 0.5,
+
+    ...rest
+  } = props
+
   const skin = colors.skin[skinTone]
 
   const Eyes = eyesMap[eyes]
