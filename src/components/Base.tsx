@@ -81,7 +81,7 @@ export const Base = ({
 
   const { Front: FrontHair, Back: BackHair, hatScale } = hair
   const { Front: FrontHat, Back: BackHat } = hat
-  const { Front: FrontBody, Back: BackBody } = body
+  const { Front: FrontBody } = body
   const {
     Front: ClothingFront,
     Back: ClothingBack,
@@ -138,7 +138,6 @@ export const Base = ({
           strokeWidth="12px"
         />
 
-        {/* <BackBody clothingColor={clothingColor} braStraps={braStraps} /> */}
         <ClothingBack color={clothingColor} graphic={Graphic} />
         {!(ClothingFront === Noop && ClothingBack === Noop) && (
           <FrontBody
