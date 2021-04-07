@@ -208,11 +208,11 @@ export const Avatar = (props: AvatarProps) => {
     lipColor = selectRandom(colors.lipColors),
     hatColor = selectRandom(colors.clothing),
     faceMaskColor = selectRandom(colors.clothing),
+    lashes = rand() > 0.5,
 
     clothing = 'naked',
     mask = false,
     faceMask = false,
-    lashes = Math.random() > 0.5,
 
     ...rest
   } = props
