@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/%40mavend%2Foctoheads.svg)](https://badge.fury.io/js/%40mavend%2Foctoheads)
+
 # Octoheads
 
 🐙 Generate octopus avatars
