@@ -23,9 +23,9 @@ npm install @mavend/octoheads --save
 then, in your app:
 
 ```jsx
-import { OctoHead } from '@bigheads/core'
+import { OctoHead } from '@mavend/octoheads'
 
-const Example = () => (
+const Custom = () => (
   <OctoHead
     accessory="shades"
     circleColor="blue"
@@ -43,6 +43,10 @@ const Example = () => (
     mouth="open"
     skinTone="brown"
   />
+)
+
+const RandomWithSeed = () => (
+  <OctoHead seed="user-id" />
 )
 ```
 
