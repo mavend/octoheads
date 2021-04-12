@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/%40mavend%2Foctoheads.svg)](https://badge.fury.io/js/%40mavend%2Foctoheads)
+
 # Octoheads
 
 🐙 Generate octopus avatars
@@ -23,9 +25,9 @@ npm install @mavend/octoheads --save
 then, in your app:
 
 ```jsx
-import { OctoHead } from '@bigheads/core'
+import { OctoHead } from '@mavend/octoheads'
 
-const Example = () => (
+const Custom = () => (
   <OctoHead
     accessory="shades"
     circleColor="blue"
@@ -43,6 +45,10 @@ const Example = () => (
     mouth="open"
     skinTone="brown"
   />
+)
+
+const RandomWithSeed = () => (
+  <OctoHead seed="user-id" />
 )
 ```
 
